@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html ng-app="medicalApp">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+   <!-- <-- //定义好 ng-view -->
+    <body>
+        <div class="navbar navbar-fixed-top">
+           <div class="navbar-title">掌上医疗</div>
+            <span class="iconfont" id="search-button">&#xf0011;</span>
+           <div id="search-panel" class="index-search-panel">
+               <input type="text" id="search-input" placeholder="搜索症状、疾病、药品、医生等">
+               <span class="search-icon iconfont">&#xf0011;</span>
+           </div>
+        </div>
+        <div class="content">
+            <div class="quick-links-box">
+                <div class="quick-link">
+                    <a href="askQuestion.html">
+                          <div class="quick-link-icon" id="ask-question"></div>
+                         <span class="quick-link-name">疾病质询</span>
+                    </a>
+                  
+                </div>
+                 <div class="quick-link">
+                    <a href="doctor-bank.html">
+                         <div class="quick-link-icon" id="doctor-bank"></div>
+                         <span class="quick-link-name">医生库</span>
+                    </a>
+                  
+                </div>
+                 <div class="quick-link">
+                    <a href="myDoctor.html">
+                         <div class="quick-link-icon" id="my-doctor"></div>
+                         <span class="quick-link-name">我的医生</span>
+                    </a>
+                  
+                </div>
+                 <div class="quick-link">
+                    <a href="healthy_news.html">
+                          <div class="quick-link-icon" id="healthy-news"></div>
+                          <span class="quick-link-name">健康资讯</span>
+                    </a>
+                  
+                </div>
+             
+            </div>
+
+
+            <div class="index-info-list">
+                <div class="index-info">
+                    <a href="doctor-bank.html">
+                        <div class="index-info-img">
+                            <span class="iconfont" id="doctor-record">&#xe65c;</span>
+                        </div>
+                        <div class="index-info-description">
+                            <h2 class="index-info-description-title">医生评分榜</h2>
+                            <span class="index-info-description-info">最近一周医生评价排行</span>
+                        </div>
+                    </a>
+                   
+                </div>
+                <div class="index-info">
+                    <a href="myHistoryQuestion.html">
+                        <div class="index-info-img">
+                            <span class="iconfont">&#xe601;</span>
+                        </div>
+                        <div class="index-info-description">
+                            <h2 class="index-info-description-title">我的历史自查记录</h2>
+                            <span class="index-info-description-info">最近一周的问题、症状、医生自查记录</span>
+                        </div> 
+
+                    </a>
+              
+                </div>
+  
+                <div class="index-info">
+                    <a href="article-sort.html">
+                        <div class="index-info-img">
+                            <span class="iconfont">&#xe68d;</span>
+                        </div>
+                        <div class="index-info-description">
+                            <h2 class="index-info-description-title">掌上医疗热搜内容</h2>
+                            <span class="index-info-description-info">最近一周的热搜的事情</span>
+                        </div>
+                    </a>
+                   
+                </div>
+               
+            </div>
+        </div>
+
+
+        <div class="navbar flexbox navbar-fixed-bottom">
+            <div class="navbar-btn  box-flex-1 navbar-btn-current">
+                <a href="#">
+                      <div class="navbar-btn-icon iconfont ">&#xe607;</div>
+                      <span class="navbar-btn-name">首页</span>
+                </a>
+            </div>
+             <div class="navbar-btn box-flex-1">
+                <a href="search.html">
+                    <div class="navbar-btn-icon iconfont">&#xf0011;</div>
+                    <span class="navbar-btn-name">自查</span>
+                </a>
+            </div>
+<!--              <div class="navbar-btn box-flex-1">
+   <a href="online_history.html">
+       <div class="navbar-btn-icon iconfont">&#xe604;</div>
+       <span class="navbar-btn-name">空中医院</span>
+   </a> 
+            </div> -->
+             <div class="navbar-btn box-flex-1">
+                <a href="healthy_news.html">
+                    <div class="navbar-btn-icon iconfont">&#x3433;</div>
+                    <span class="navbar-btn-name">健康资讯</span>
+                </a>  
+            </div>
+             <div class="navbar-btn box-flex-1">
+                <a href="accountCenter.html">
+                    <div class="navbar-btn-icon iconfont">&#xe610;</div>
+                    <span class="navbar-btn-name">个人中心</span>
+                </a>
+            </div>
+           
+        </div>    
+
+        <script src="script/jquery.min.js"></script>
+        <script src="script/index.js"></script>
+    </body>
+    
+
+
+
+</html>

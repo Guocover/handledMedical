@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-title"><span class="iconfont">&#xf01eb;</span>陈国良</div>
+            <span id="return-btn" class="iconfont navbar-top-btn navbar-btn-absolute-left">&#xe699;</span>       
+        </div>
+      <div class="content">
+
+
+          <div class="talk-content" id="incomingChatMessages">
+             <!--聊天内容panel   -->
+          </div>
+         
+          
+       
+         
+            
+        </div>
+          
+        <div class="footer">
+            <div class="input">
+                <input  id="outgoingChatMessage" type="text">
+                <span >确定</span>
+            </div>
+        </div>
+
+
+
+        <%=include('./common/scriptLink.html')(it, opt)%>
+      <!--// <script src="js/common/socket.io.js"></script>-->
+    </body>
+    <script type="text/javascript">
+        require.config({
+            baseUrl : 'js/talk/'
+        });
+        require(['talk'], function (talk) {
+            talk.init();
+        });
+    </script>
+
+
+</html>    

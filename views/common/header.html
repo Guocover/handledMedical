@@ -1,0 +1,11 @@
+
+<header class="navbar navbar-fixed-top">
+        <div class="navbar-title"><%= it.pageTitle%></div>
+         <% if(it.userType == 0){%>
+        <span class="iconfont" id="search-button">&#xf0011;</span>
+        <div id="search-panel" class="index-search-panel">
+            <input type="text" id="search-input" placeholder="搜索症状、疾病、药品、医生等">
+            <span class="search-icon">搜索</span>
+        </div>
+        <%}%>
+</header>

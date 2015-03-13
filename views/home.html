@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html ng-app="medicalApp">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+
+        <script type="text/javascript">
+            // 用于登录状态的标识
+            connected = {{alreadyLogged}};
+        </script>
+
+        <!-- AngularJs 的引入 -->
+        <script src="script/angular.min.js"></script>
+        <script src="script/angular-route.min.js"></script>
+        <script src="script/medicalApp.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+   <!-- <-- //定义好 ng-view -->
+    <body ng-view>
+    </body>
+    
+
+
+    <!-- login view -->
+    <script type="text/ng-template" id="loginView">
+            <div class="container" ng-controller="loginCtrl" >
+                //这里是具体的HTML代码
+            </div>
+    </script>
+
+
+</html>

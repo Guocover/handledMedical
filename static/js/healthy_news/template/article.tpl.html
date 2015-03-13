@@ -1,0 +1,22 @@
+<% for(var i = 0 ; i< it.length; i++){
+var article = it[i];
+%>
+<div class="article">
+    <a href="article-detail.html">
+        <div class="article-img">
+            <img src="img/<%= article.type%>.jpg" alt="">
+        </div>
+        <div class="article-content">
+            <div class="article-title"><%= article.title%></div>
+            <div class="article-description">
+                <%= article.content%>
+            </div>
+        </div>
+        <div class="article-info">
+            <span class="iconfont">&#x3436;</span>
+            <span class="article-type">健身</span>
+            <span class="iconfont">&#xe607;</span>
+            <span class="article-readNum">300</span>
+        </div>
+    </a>
+</div>

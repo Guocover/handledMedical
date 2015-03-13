@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+
+
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+   <!-- <-- //定义好 ng-view -->
+    <body>
+        <div class="container" id="login-container" >
+            <div class="login-logo">
+                <img src="./img/logo.png" alt="">
+                <h1 class="login-title">掌上医疗</h1>
+                <h3 class="login-info">最近,您好吗?</h3>
+            </div>
+            
+            <div class="show-login">
+                <span class="login-goDown iconfont">&#xe635;</span>
+            </div>
+
+            <form action="./index.html" id="loginForm">
+                <div class="input_box">
+                    <i class="input_icon iconfont">&#xe6c5;</i>
+                    <input class="input_text" type="text" placeholder="手机/邮箱">
+                </div>
+                <div class="input_box">
+                    <i class="input_icon iconfont">&#xe613;</i>
+                    <input class="input_text" type="password" placeholder="密码">
+                </div>
+                <div class="input_box">
+                    <input class="btn width100" type="submit" value="确定">
+                </div>
+                <div class="without-login">
+                     <a href="find-pwd.html">忘记密码</a>
+                     <a href="index.html">免登陆浏览</a>
+                </div>
+
+            </form>
+
+            <div class="foot">
+                <p class="author_message">&copy; 2014 by <a href="http://www.hungrycover.net" target="_blank">cover</a></p>
+            </div>
+        </div>
+
+        
+        <script src="script/jquery.min.js"></script>
+        <script src="script/login.js"></script>
+
+
+    </body>
+
+
+
+</html>    

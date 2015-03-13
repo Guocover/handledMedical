@@ -1,0 +1,27 @@
+    <% for(var i = 0 ; i< it.length; i++){
+    var itemOne = it[i];
+    %>
+    <div class="doctor">
+        <a href="doctor-detail.html">
+            <div class="doctor-left">
+                <div class="doctor-img">
+                    <img src="img/3.jpg" alt="">
+
+                </div>
+
+            </div>
+
+            <div class="doctor-content">
+                <div class="doctor-info">
+                    <span class="doctor-name"><%=itemOne.name%></span>
+                    <span class="doctor-direction"><%=itemOne.direction%></span>
+                </div>
+                <div class="doctor-job"><%=itemOne.job%></div>
+                <div class="doctor-description">
+                    <span class="doctor-hospital"><%=itemOne.hospital%></span>
+                    <span class="doctor-shortcut"><%=itemOne.description%></span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <% }%>

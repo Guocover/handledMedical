@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html ng-app="medicalApp">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+   <!-- <-- //定义好 ng-view -->
+    <body>
+        <div class="navbar navbar-fixed-top">
+           <div class="navbar-title">自查</div>
+        </div>
+        <div class="content">
+           <div id="search-panel">
+               <input type="text" id="search-input" placeholder="搜索症状、疾病、药品、医生等">
+               <span class="search-icon ">搜索</span>
+           </div>
+           <div class="search-sort"> 
+               <div class="sort-tr flexbox">
+                     <div class="sort-kind box-flex-1">
+                    <a href="">
+                           <div class="sort-kind-btn-icon iconfont" id="sort-btn-ownSearch">&#xe68d;</div>
+                          <span class="sort-kind-btn-name">搜索库</span>
+                    </a>
+                   </div>
+                    <div class="sort-kind box-flex-1">
+                        <a href="">
+                               <div class="sort-kind-btn-icon iconfont" id="sort-btn-commonDisease">&#xe630;</div>
+                              <span class="sort-kind-btn-name"> 常见病 </span>
+                        </a>
+                   </div>
+                    <div class="sort-kind box-flex-1">
+                        <a href="">
+                               <div class="sort-kind-btn-icon iconfont" id="sort-btn-commonMedicine">&#xe61d;</div>
+                              <span class="sort-kind-btn-name"> 常见药 </span>
+                        </a>
+                   </div>
+               </div>
+                <div class="sort-tr flexbox">
+                    <div class="sort-kind box-flex-1">
+                        <a href="">
+                               <div class="sort-kind-btn-icon iconfont" id="sort-btn-officeQuestion">&#xe607;</div>
+                              <span class="sort-kind-btn-name">科室问题</span>
+                        </a>
+                   </div>
+                    <div class="sort-kind box-flex-1">
+                        <a href="">
+                               <div class="sort-kind-btn-icon iconfont"  id="sort-btn-nearHospital">&#xe604;</div>
+                              <span class="sort-kind-btn-name">附近医院</span>
+                        </a>
+                   </div>
+                    <div class="sort-kind box-flex-1">
+                        <a href="">
+                               <div class="sort-kind-btn-icon iconfont" id="sort-btn-nearPharmacy">&#x343f;</div>
+                              <span class="sort-kind-btn-name">附近药店</span>
+                        </a>
+                   </div>
+                </div>
+             
+           </div>
+        </div>
+
+
+
+
+        <%=include('./common/footer.html')(it, opt)%>

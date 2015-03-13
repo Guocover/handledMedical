@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-title">个人中心</div>
+            <span id="return-btn" class="navbar-top-btn navbar-btn-absolute-left">首页</span>       
+        </div>
+      
+        <div class="content">
+            <div class="flexbox account-btn-panel">
+                <a class="box-flex-1" href="">
+                     <div class="register-btn account-btn">注册</div>
+                </a>
+              
+                <a class="box-flex-1" href="login.html">
+                  <div class="box-flex-1 login-btn account-btn">登陆</div> 
+                </a>
+                <a class="box-flex-1" href="login.html">
+                  <div class="box-flex-1 modify-pwd-btn account-btn">修改密码</div> 
+                </a>
+                
+            </div>
+
+        </div>
+
+
+
+
+    <%=include('./common/scriptLink.html')(it, opt)%>
+
+
+        <%=include('./common/footer.html')(it, opt)%>

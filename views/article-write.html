@@ -1,0 +1,43 @@
+<%=include('./common/commonLinks.html')(it, opt)%>
+<%=include('./common/header.html')(it, opt)%>
+
+<div class="content">
+    <form id="acticleWriteForm" class="form"  method="post" action="/controller/articleAction/addArticle.do">
+        <div>
+            <div>文章名称</div>
+            <input class="fullWidth article-title"  type="text"/>
+        </div>
+        <div>
+            <div>文章分类</div>
+            <div class="">
+                <span>药品理疗</span><input type="checkbox" value="1"/>
+                <span>疾病困障</span><input type="checkbox" value="2"/>
+                <span>健康养生</span><input type="checkbox" value="3"/>
+                <span>医疗知识</span><input type="checkbox" value="4"/>
+                <span>综合</span><input type="checkbox" value="5"/>
+            </div>
+
+        </div>
+        <div>
+            <div>文章内容</div>
+            <textarea class="article-text" name="content" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button id="submitBtn" class="editBtn" />确认</button>
+            <button id="resetBtn" class="editBtn" />重置</button>
+        </div>
+    </form>
+</div>
+<%=include('./common/doctor-footer.html')(it, opt)%>
+<%=include('./common/scriptLink.html')(it, opt)%>
+<script src="js/index/main.js"></script>
+<script type="text/javascript">
+    require.config({
+        baseUrl : 'js/article-write/'
+    });
+    require(['main'], function (articleWrite) {
+        articleWrite.init();
+    });
+</script>
+</body>
+</html>

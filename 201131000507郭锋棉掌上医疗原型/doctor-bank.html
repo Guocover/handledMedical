@@ -1,0 +1,346 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-title">医生库</div>
+            <span id="return-btn" class="navbar-top-btn navbar-btn-absolute-left">首页</span>
+           <span  id="choose-btn" class="navbar-top-btn navbar-btn-absolute-right">筛选</span>
+         
+        </div>
+      
+      <div class="content" id="doctor-bank-content">
+          <div id="search-panel" class="doctorBank-search-panel">
+              <div class="select_box">
+                 <span>选择地区</span>
+                 <select name="" id="">
+                      <option value="-1">全部</option>
+                      <option value="1">北京</option>
+                      <option value="2">上海</option>
+                      <option value="3">南京</option>
+                      <option value="4">杭州</option>
+                      <option value="5">广州</option>
+                 </select>
+              </div>
+              <div class="select_box">
+                 <span>选择科室</span>
+                 <select name="" id="">
+                      <option value="-1">全部</option>
+                      <option value="1">皮肤科</option>
+                      <option value="2">小儿科</option>
+                      <option value="3">内科</option>
+                      <option value="4">外科</option>
+                      <option value="5">口腔科</option>
+                 </select>
+              </div>
+              <div class="select_box">
+                    <span>选择医院</span>
+                     <select name="" id="">
+                          <option value="-1">全部</option>
+                          <option value="1">南方医科</option>
+                          <option value="2">中南医院</option>
+        
+                     </select>
+
+              </div>
+           
+               <input type="text" id="search-input" placeholder="请输入搜索的医生姓名等">
+               <span class="search-icon iconfont">&#xf0011;</span>
+          </div>  
+  
+
+          <div id="doctor-wrapper">
+              <div id="scroller">
+                  <div id="pullDown">
+                      <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+                  </div>
+                  <div class="doctor-list" id="doctor-list">
+                      <div class="doctor">
+                        <a href="doctor-detail.html">
+                          <div class="doctor-left">
+                              <div class="doctor-img">
+                              <img src="img/3.jpg" alt="">
+                             
+                              </div>
+                              <div class="doctor-rank">
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                              </div>
+                          </div>
+                      
+                          <div class="doctor-content">
+                              <div class="doctor-info">
+                                  <span class="doctor-name">黄小菊</span>
+                                  <span class="doctor-direction">心血管外科</span>
+                              </div>
+                              <div class="doctor-job">
+                                  主治医生
+                              </div>
+                              <div class="doctor-description">
+                                <span class="doctor-hospital">广东省人民医院广东省精神研究中心</span>
+                                 <span class="doctor-shortcut">各项心脏病包括先天性心脏病、风湿性心脏病</span>
+                              </div>
+                          </div>
+                         </a>
+                        </div>
+                      <div class="doctor">
+                        <a href="doctor-detail.html">
+                          <div class="doctor-left">
+                              <div class="doctor-img">
+                              <img src="img/2.jpg" alt="">
+                             
+                              </div>
+                              <div class="doctor-rank">
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                              </div>
+                          </div>
+                      
+                          <div class="doctor-content">
+                              <div class="doctor-info">
+                                  <span class="doctor-name">黄小菊</span>
+                                  <span class="doctor-direction">心血管外科</span>
+                              </div>
+                              <div class="doctor-job">
+                                  主治医生
+                              </div>
+                              <div class="doctor-description">
+                                <span class="doctor-hospital">广东省人民医院广东省精神研究中心</span>
+                                 <span class="doctor-shortcut">各项心脏病包括先天性心脏病、风湿性心脏病</span>
+                              </div>
+                          </div>
+                         </a>
+                        </div>
+                      <div class="doctor">
+                        <a href="doctor-detail.html">
+                          <div class="doctor-left">
+                              <div class="doctor-img">
+                              <img src="img/1.jpg" alt="">
+                             
+                              </div>
+                              <div class="doctor-rank">
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                              </div>
+                          </div>
+                      
+                          <div class="doctor-content">
+                              <div class="doctor-info">
+                                  <span class="doctor-name">黄小菊</span>
+                                  <span class="doctor-direction">心血管外科</span>
+                              </div>
+                              <div class="doctor-job">
+                                  主治医生
+                              </div>
+                              <div class="doctor-description">
+                                <span class="doctor-hospital">广东省人民医院广东省精神研究中心</span>
+                                 <span class="doctor-shortcut">各项心脏病包括先天性心脏病、风湿性心脏病</span>
+                              </div>
+                          </div>
+                         </a>
+                        </div>
+                        <div class="doctor">
+                        <a href="doctor-detail.html">
+                          <div class="doctor-left">
+                              <div class="doctor-img">
+                              <img src="img/3.jpg" alt="">
+                             
+                              </div>
+                              <div class="doctor-rank">
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                              </div>
+                          </div>
+                      
+                          <div class="doctor-content">
+                              <div class="doctor-info">
+                                  <span class="doctor-name">黄小菊</span>
+                                  <span class="doctor-direction">心血管外科</span>
+                              </div>
+                              <div class="doctor-job">
+                                  主治医生
+                              </div>
+                              <div class="doctor-description">
+                                <span class="doctor-hospital">广东省人民医院广东省精神研究中心</span>
+                                 <span class="doctor-shortcut">各项心脏病包括先天性心脏病、风湿性心脏病</span>
+                              </div>
+                          </div>
+                         </a>
+                        </div>
+                      <div class="doctor">
+                        <a href="doctor-detail.html">
+                          <div class="doctor-left">
+                              <div class="doctor-img">
+                              <img src="img/3.jpg" alt="">
+                             
+                              </div>
+                              <div class="doctor-rank">
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                                  <span class="iconfont">&#xe65c;</span>
+                              </div>
+                          </div>
+                      
+                          <div class="doctor-content">
+                              <div class="doctor-info">
+                                  <span class="doctor-name">黄小菊</span>
+                                  <span class="doctor-direction">心血管外科</span>
+                              </div>
+                              <div class="doctor-job">
+                                  主治医生
+                              </div>
+                              <div class="doctor-description">
+                                <span class="doctor-hospital">广东省人民医院广东省精神研究中心</span>
+                                 <span class="doctor-shortcut">各项心脏病包括先天性心脏病、风湿性心脏病</span>
+                              </div>
+                          </div>
+                         </a>
+                        </div>
+                  </div>
+                  <div id="pullUp">
+                      <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+                  </div>
+              </div>    
+          </div>
+       
+        
+      </div>
+
+   
+    
+    <script src="./script/jquery.min.js"></script>
+    <script type="application/javascript" src="./script/iscroll.js"></script>
+    <script type="text/javascript">
+
+    var myScroll,
+      pullDownEl, pullDownOffset,
+      pullUpEl, pullUpOffset,
+      generatedCount = 0;
+
+    /**
+     * 下拉刷新 （自定义实现此方法）
+     * myScroll.refresh();    // 数据加载完成后，调用界面更新方法
+     */
+    function pullDownAction () {
+      setTimeout(function () { 
+       // <-- Simulate network congestion, remove setTimeout from production!
+        myScroll.refresh();   //数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
+      }, 1000); // <-- Simulate network congestion, remove setTimeout from production!
+    }
+
+    /**
+     * 滚动翻页 （自定义实现此方法）
+     * myScroll.refresh();    // 数据加载完成后，调用界面更新方法
+     */
+    function pullUpAction () {
+      setTimeout(function () {  // <-- Simulate network congestion, remove setTimeout from production!
+        var el = $("#doctor-list");
+        console.log(el);
+
+        for (i=0; i<3; i++) {
+          $(".doctor").eq(i).clone().insertAfter(el);
+        }
+        
+        myScroll.refresh();   // 数据加载完成后，调用界面更新方法 Remember to refresh when contents are loaded (ie: on ajax completion)
+      }, 1000); // <-- Simulate network congestion, remove setTimeout from production!
+    }
+
+    /**
+     * 初始化iScroll控件
+     */
+    function loaded() {
+      pullDownEl = document.getElementById('pullDown');
+      pullDownOffset = pullDownEl.offsetHeight;
+      pullUpEl = document.getElementById('pullUp'); 
+      pullUpOffset = pullUpEl.offsetHeight;
+      
+      myScroll = new iScroll('doctor-wrapper', {
+        scrollbarClass: 'myScrollbar', /* 重要样式 */
+        useTransition: false, /* 此属性不知用意，本人从true改为false */
+        topOffset: pullDownOffset,
+        onRefresh: function () {
+          if (pullDownEl.className.match('loading')) {
+            pullDownEl.className = '';
+            pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+          } else if (pullUpEl.className.match('loading')) {
+            pullUpEl.className = '';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+          }
+        },
+        onScrollMove: function () {
+          if (this.y > 5 && !pullDownEl.className.match('flip')) {
+            pullDownEl.className = 'flip';
+            pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+            this.minScrollY = 0;
+          } else if (this.y < 5 && pullDownEl.className.match('flip')) {
+            pullDownEl.className = '';
+            pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+            this.minScrollY = -pullDownOffset;
+          } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+            pullUpEl.className = 'flip';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+            this.maxScrollY = this.maxScrollY;
+          } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+            pullUpEl.className = '';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+            this.maxScrollY = pullUpOffset;
+          }
+        },
+        onScrollEnd: function () {
+          if (pullDownEl.className.match('flip')) {
+            pullDownEl.className = 'loading';
+            pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';        
+            pullDownAction(); // Execute custom function (ajax call?)
+          } else if (pullUpEl.className.match('flip')) {
+            pullUpEl.className = 'loading';
+            pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';        
+            pullUpAction(); // Execute custom function (ajax call?)
+          }
+        }
+      });
+      
+      setTimeout(function () { document.getElementById('doctor-wrapper').style.left = '0'; }, 800);
+    }
+
+    //初始化绑定iScroll控件 
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    document.addEventListener('DOMContentLoaded', loaded, false); 
+
+</script>
+    <script src="./script/doctor-bank.js"></script>
+    </body>
+    
+
+
+</html>    

@@ -1,0 +1,82 @@
+<%=include('./common/commonLinks.html')(it, opt)%>
+<%=include('./common/header.html')(it, opt)%>
+
+        <div class="content">
+            <div class="quick-links-box">
+                <div class="quick-link">
+                    <a href="askQuestion.html">
+                          <div class="quick-link-icon" id="ask-question"></div>
+                         <span class="quick-link-name">疾病质询</span>
+                    </a>
+                  
+                </div>
+                 <div class="quick-link">
+                    <a href="doctor-bank.html">
+                         <div class="quick-link-icon" id="doctor-bank"></div>
+                         <span class="quick-link-name">医生库</span>
+                    </a>
+                  
+                </div>
+                 <div class="quick-link">
+                    <a href="myDoctor.html">
+                         <div class="quick-link-icon" id="my-doctor"></div>
+                         <span class="quick-link-name">我的医生</span>
+                    </a>
+                  
+                </div>
+                 <div class="quick-link">
+                    <a href="healthy_news.html">
+                          <div class="quick-link-icon" id="healthy-news"></div>
+                          <span class="quick-link-name">健康资讯</span>
+                    </a>
+                  
+                </div>
+             
+            </div>
+
+
+            <div class="index-info-list">
+                <div class="index-info">
+                    <a href="doctor-bank.html">
+                        <div class="index-info-img">
+                            <span class="iconfont" id="doctor-record">&#xe65c;</span>
+                        </div>
+                        <div class="index-info-description">
+                            <h2 class="index-info-description-title">医生评分榜</h2>
+                            <span class="index-info-description-info">最近一周医生评价排行</span>
+                        </div>
+                    </a>
+                   
+                </div>
+                <div class="index-info">
+                    <a href="myHistoryQuestion.html">
+                        <div class="index-info-img">
+                            <span class="iconfont">&#xe601;</span>
+                        </div>
+                        <div class="index-info-description">
+                            <h2 class="index-info-description-title">我的历史自查记录</h2>
+                            <span class="index-info-description-info">最近一周的问题、症状、医生自查记录</span>
+                        </div> 
+
+                    </a>
+              
+                </div>
+  
+                <div class="index-info">
+                    <a href="article-sort.html">
+                        <div class="index-info-img">
+                            <span class="iconfont">&#xe68d;</span>
+                        </div>
+                        <div class="index-info-description">
+                            <h2 class="index-info-description-title">掌上医疗热搜内容</h2>
+                            <span class="index-info-description-info">最近一周的热搜的事情</span>
+                        </div>
+                    </a>
+                   
+                </div>
+               
+            </div>
+        </div>
+<%=include('./common/scriptLink.html')(it, opt)%>
+<script src="js/index/main.js"></script>
+<%=include('./common/footer.html')(it, opt)%>

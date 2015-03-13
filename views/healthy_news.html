@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 加入响应式布局 -->
+        <meta name="format-detection" content="telephone=no,email=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+
+        <!-- 设置safari的属性 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
+
+        <title>掌上医疗</title>
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="navbar navbar-fixed-top">
+           <div class="navbar-title">健康资讯</div>
+        </div>
+      <div class="content">
+          <div class="slider">
+            <div class="show"><img src="img/1.jpg" alt="" class="slide-img"></div>
+            <div class="slider-imgList" style="display:none;">
+              <img class="preview-img" src="img/1.jpg" alt="">
+              <img class="preview-img" src="img/2.jpg" alt="">
+              <img class="preview-img" src="img/3.jpg" alt="">
+
+            </div>
+            <div class="slider-index">
+              <div class="indexPanel">
+                  <span class="indexSquare indexSquare-current"></span>
+                  <span class="indexSquare"></span>
+                  <span class="indexSquare"></span>
+              </div>
+         
+            </div>
+          </div>
+
+          <div class="news-list">
+            <div class="new">
+              <div class="new-title"></div>
+              <div class="new-description"></div>
+              <div class="img"></div>
+            </div>
+          </div>
+
+          <div class="news-topic-panel">
+            <div class="news-topic-tr  flexbox">
+                <div class="news-topic box-flex-1">
+                   <a href="./article-sort.html">药品理疗</a>
+                </div>
+                <div class="news-topic box-flex-1">
+                   <a href="./article-sort.html">疾病困障</a>
+                </div>
+                <div class="news-topic box-flex-1">
+                   <a href="./article-sort.html">健康养生</a>
+                </div>
+                <div class="news-topic box-flex-1">
+                   <a href="./article-sort.html">医疗知识</a>
+                </div>
+                <div class="news-topic box-flex-1">
+                    <a href="./article-sort.html">.......</a>
+                </div>
+            </div>
+          
+          </div>
+
+          <div class="article-list">
+
+             
+          </div>
+        
+      </div>
+
+    <%=include('./common/scriptLink.html')(it, opt)%>
+    <script src="js/healthy_news.js"></script>
+    <%=include('./common/footer.html')(it, opt)%>
