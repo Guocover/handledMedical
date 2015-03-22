@@ -1,24 +1,4 @@
-<!doctype html>
-
-<html>
-
-    <head>
-        <meta charset="utf-8">
-        <!-- 加入响应式布局 -->
-        <meta name="format-detection" content="telephone=no,email=no"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
-
-        <!-- 设置safari的属性 -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
-
-        <title>掌上医疗</title>
-
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
+<%=include('./common/commonLinks.html')(it, opt)%>
         <div class="navbar navbar-fixed-top">
             <div class="navbar-title">医生库</div>
             <span id="return-btn" class="navbar-top-btn navbar-btn-absolute-left">首页</span>
@@ -30,18 +10,11 @@
           <div id="search-panel" class="doctorBank-search-panel">
               <div class="select_box">
                  <span>选择地区</span>
-                 <select name="" id="">
-                      <option value="-1">全部</option>
-                      <option value="1">北京</option>
-                      <option value="2">上海</option>
-                      <option value="3">南京</option>
-                      <option value="4">杭州</option>
-                      <option value="5">广州</option>
-                 </select>
+                 <input name="city" type="text" placeholder="请输入搜索的城市"/>
               </div>
               <div class="select_box">
                  <span>选择科室</span>
-                 <select name="" id="">
+                 <select name="direction" id="">
                       <option value="-1">全部</option>
                       <option value="1">皮肤科</option>
                       <option value="2">小儿科</option>

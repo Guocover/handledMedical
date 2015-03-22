@@ -9,18 +9,17 @@ var  log4js = require('log4js'),
 
 
 
-var ApplyService = function (){
-    this.applyDao = global.models.applyDao;
-    this.userApplyDao = global.models.userApplyDao;
+var QuestionService = function (){
+    this.questionDao = global.models.questionDao;
 };
 
 
 
-ApplyService.prototype = {
+QuestionService.prototype = {
 
     queryListByAdmin : function (target , callback){
 
-        this.applyDao.find(["createTime", "Z"], function (err , items){
+        this.questionDao.find(["createTime", "Z"], function (err , items){
             if(err){
                 callback(err);
                 return;
@@ -29,7 +28,7 @@ ApplyService.prototype = {
         });
     },
     queryListByUser : function (target , callback){
-        this.applyDao.find({userName: target.user.loginName},["createTime", "Z"], function (err , items){
+        this.questionDao.find({userName: target.user.loginName},["createTime", "Z"], function (err , items){
             if(err){
                 callback(err);
                 return;
@@ -39,8 +38,8 @@ ApplyService.prototype = {
     },
     queryListBySearch : function (searchParam , callback){
 
-
-        this.applyDao.find(searchParam ,["createTime", "Z"], function (err , items){
+        console.log(searchParam);
+        this.questionDao.find(searchParam ,["createTime", "Z"], function (err , items){
             if(err){
                 callback(err);
                 return;
@@ -48,37 +47,23 @@ ApplyService.prototype = {
             callback(null,items);
         });
     },
+    //插入新文章
     add: function(target, callback){
-        var self = this;
-        var userId = target.user.id;
-        this.applyDao.create(target , function (err , newApply){
+
+        this.questionDao.create(target , function (err , newArticle){
             if(err){
                 callback(err);
                 return;
             }
             if(GLOBAL.DEBUG){
-                logger.info("Insert into b_apply success! target1: ",newApply);
+                logger.info("Insert into b_apply success! target1: ", newArticle);
             }
-            //创建项目的即为管理员 故role ==1
-            var userApply = {
-                userId : userId,
-                applyId : newApply.id,
-                role: 1,
-                createTime : new Date()
-            };
-            console.log(userApply);
-            self.userApplyDao.create(userApply, function (err, items) {
-                if(err){
-                    callback(err);
-                    return;
-                }
-                callback(null);
-            })
-
+            callback(null);
+            return;
         });
     },
     remove : function(target, callback){
-        this.applyDao.one({id: target.id }, function (err, apply) {
+        this.questionDao.one({id: target.id }, function (err, apply) {
             // SQL: "SELECT * FROM b_apply WHERE name = 'xxxx'"
             for(key in target){
                 apply[key] = target[key];
@@ -89,7 +74,7 @@ ApplyService.prototype = {
         });
     },
     update : function(target, callback){
-        this.applyDao.one({id: target.id }, function (err, apply) {
+        this.questionDao.one({id: target.id }, function (err, apply) {
             // SQL: "SELECT * FROM b_apply WHERE name = 'xxxx'"
             for(key in target){
                 apply[key] = target[key];
@@ -103,5 +88,5 @@ ApplyService.prototype = {
 }
 
 
-module.exports =  ApplyService;
+module.exports =  QuestionService;
 

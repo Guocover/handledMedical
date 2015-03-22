@@ -13,7 +13,7 @@ orm.connect( mysql, function(err , db) {
 
     global.models = {
         userDao : require('../dao/UserDao')(db),
-        applyDao : require('../dao/ApplyDao')(db),
+        applyDao : require('../dao/AnswerDao')(db),
         approveDao : require('../dao/ApproveDao')(db),
         statisticsDao : require('../dao/StatisticsDao')(db),
         db : db

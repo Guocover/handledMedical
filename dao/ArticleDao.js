@@ -11,7 +11,7 @@ module.exports  = function (db){
         content     : String,
         author      : String,
         createTime  : Date,
-        type        : String
+        type        : Number
     },{
         id: "article_id"
     });

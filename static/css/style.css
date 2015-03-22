@@ -308,6 +308,9 @@ textarea{
     background-color: #F9F8F8;
     margin: 0 3px;
 }
+.quick-link a{
+    display: block;
+}
 .quick-link:hover{
     background-color: #e0e0e0;
 }
@@ -448,7 +451,7 @@ textarea{
 }
 
 .select_box select, .select_box input[type="text"]{
-    width: 190px;
+    width: 181px;
     border: none;
     font-size: 16px;
     padding: 2px 4px;
@@ -487,7 +490,7 @@ textarea{
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-
+    text-align: center;
 }
 .login-goDown{
     display: block;
@@ -675,7 +678,7 @@ textarea{
 .article-img{
     float: left;
     width: 80px;
-    height:100px;
+    height:80px;
 }
 .article-content{
     overflow: hidden;
@@ -687,11 +690,13 @@ textarea{
 .article-title{
     color: #333;
     font-weight: bold;
+
 }
 .article-description{
     color: #666;
     text-indent: 2em;
     line-height: 20px;
+    height: 80px;
 }
 .article-info{
     height: 20px;
@@ -719,7 +724,8 @@ textarea{
     font-weight: normal;
 }
 .article-detail-img{
-    height: 230px;
+    height: 200px;
+    margin: 20px 10px;
 }
 
 #collect-btn,#evaluate-btn{
@@ -877,7 +883,7 @@ textarea{
 
 /*下拉刷新*/
 
-#doctor-wrapper {
+#doctor-wrapper,#article-wrapper {
     z-index:1;
     top:45px; 
     bottom:3px; 
@@ -1257,6 +1263,16 @@ textarea{
 }
 
 
+.page404{
+    background: url(../img/404.jpg) no-repeat;
+    height: 410px;
+    margin: 0 auto;
+    width: 300px;
+    background-size: 309px;
+    background-position: center;
+
+}
+
 
 
 
@@ -1297,8 +1313,17 @@ textarea{
 
 
 .input_box label{
-    width: 80px;
+    /*width: 80px;*/
     display: inline-block;
+}
+.register-panel .input_box input{
+    width:210px;
+}
+.account-form .input_box input{
+    width: 210px;
+}
+.account-form .input_box .btn{
+    width:110px;
 }
 
 

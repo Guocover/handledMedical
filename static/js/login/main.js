@@ -4,43 +4,37 @@ define([], function(){
             $(".show-login").hide(300);
             $("#loginForm").slideDown(0);
         });
+        $("#loginBtn").on('click',  function(e) {
+            login();
+        });
     }
 
     function login(){
-        applyBox.on('click', '.apply-submit', function(e){
-            e.preventDefault();
-            if(!isValid){
-                console.log(isValid);
-                alert("填写错误，请改正填写");
-                return;
-            }
-            var params = {};
+            var opts = {};
             //申请数据
-            $.extend(params, {
-                name: $('.apply-name').val(),
-                description: $('.apply-description').val(),
-                url: $(".apply-url").val()
+            $.extend(opts, {
+                params: {
+                    account: $('[name="account"]').val(),
+                    password: $('[name="password"]').val()
+                },
+                method:'post',
+                cgi: "/login.do",
+                successCall: function (data) {
+                    alert(data.msg);
+                    switch (data.ret){
+                        case 10: location.href="index.html";break;
+                        case 11: location.href="doctor-index.html";break;
+                    }
+
+                },
+                errorCall: function (data) {
+                    alert(data.msg);
+                }
                 //mail: $(".apply-mail").val()
             });
+            DB(opts);
 
-            $.post('./controller/applyAction/addApply.do', params, function (data) {
-                var ret = data.ret;
-                switch(ret){
-                    case 0://成功
-                        //执行成功回调函数.
-                        alert("成功");
-                        location.reload();
-                        break;
-                    case 1://没有登陆态或登陆态失效
-                        alert("失败");
-                }
-            }).fail(function () {
-                // 错误处理
-            });
-
-
-        })
-    }
+    };
     function init(){
         bindEvent();
     }
@@ -48,5 +42,5 @@ define([], function(){
     return{
         init: init
     };
-});
+})
 

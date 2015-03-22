@@ -9,12 +9,12 @@
         </div>
         <div>
             <div>文章分类</div>
-            <div class="">
-                <span>药品理疗</span><input type="checkbox" value="1"/>
-                <span>疾病困障</span><input type="checkbox" value="2"/>
-                <span>健康养生</span><input type="checkbox" value="3"/>
-                <span>医疗知识</span><input type="checkbox" value="4"/>
-                <span>综合</span><input type="checkbox" value="5"/>
+            <div class="article-type">
+                <span>药品理疗</span><input type="checkbox" value="0"/>
+                <span>疾病困障</span><input type="checkbox" value="1"/>
+                <span>健康养生</span><input type="checkbox" value="2"/>
+                <span>医疗知识</span><input type="checkbox" value="3"/>
+                <span>综合</span><input type="checkbox" value="10"/>
             </div>
 
         </div>
@@ -30,7 +30,6 @@
 </div>
 <%=include('./common/doctor-footer.html')(it, opt)%>
 <%=include('./common/scriptLink.html')(it, opt)%>
-<script src="js/index/main.js"></script>
 <script type="text/javascript">
     require.config({
         baseUrl : 'js/article-write/'

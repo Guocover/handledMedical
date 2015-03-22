@@ -1,11 +1,12 @@
     <% for(var i = 0 ; i< it.length; i++){
     var itemOne = it[i];
+    var href = "/doctor-detail.html?did=" + itemOne.doctor_id;
     %>
     <div class="doctor">
-        <a href="doctor-detail.html">
+        <a href="<%= href%>">
             <div class="doctor-left">
                 <div class="doctor-img">
-                    <img src="img/3.jpg" alt="">
+                    <img src="img/2.jpg" alt="">
 
                 </div>
 

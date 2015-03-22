@@ -9,17 +9,18 @@ var  log4js = require('log4js'),
 
 
 
-var ArticleService = function (){
-    this.articleDao = global.models.articleDao;
+var AnswerService = function (){
+    this.questionDao = global.models.questionDao;
+    this.answerDao = global.models.answerDao;
 };
 
 
 
-ArticleService.prototype = {
+AnswerService.prototype = {
 
     queryListByAdmin : function (target , callback){
 
-        this.articleDao.find(["createTime", "Z"], function (err , items){
+        this.applyDao.find(["createTime", "Z"], function (err , items){
             if(err){
                 callback(err);
                 return;
@@ -28,7 +29,7 @@ ArticleService.prototype = {
         });
     },
     queryListByUser : function (target , callback){
-        this.articleDao.find({userName: target.user.loginName},["createTime", "Z"], function (err , items){
+        this.applyDao.find({userName: target.user.loginName},["createTime", "Z"], function (err , items){
             if(err){
                 callback(err);
                 return;
@@ -38,9 +39,8 @@ ArticleService.prototype = {
     },
     queryListBySearch : function (searchParam , callback){
 
-        console.log(searchParam);
-        this.articleDao.find(searchParam ,["createTime", "Z"], function (err , items){
 
+        this.applyDao.find(searchParam ,["createTime", "Z"], function (err , items){
             if(err){
                 callback(err);
                 return;
@@ -48,34 +48,33 @@ ArticleService.prototype = {
             callback(null,items);
         });
     },
-    queryListWithinTime : function (searchParam , callback){
-        var params = {};
-        if(searchParam.type){
-            params.type = searchParam.type;
-        }
-        console.log("123");
-        console.log(searchParam);
-        this.articleDao.find(params).where("createTime >=?", [searchParam.createTime]).all(function (err, items)  {
-            if(err){
-                callback(err);
-                return;
-            }
-            callback(null,items);
-        });
-    },
-    //插入新文章
     add: function(target, callback){
-
-        this.articleDao.create(target , function (err , newArticle){
+        var self = this;
+        var userId = target.user.id;
+        this.applyDao.create(target , function (err , newApply){
             if(err){
                 callback(err);
                 return;
             }
             if(GLOBAL.DEBUG){
-                logger.info("Insert into b_apply success! target1: ", newArticle);
+                logger.info("Insert into b_apply success! target1: ",newApply);
             }
-            callback(null);
-            return;
+            //创建项目的即为管理员 故role ==1
+            var userApply = {
+                userId : userId,
+                applyId : newApply.id,
+                role: 1,
+                createTime : new Date()
+            };
+            console.log(userApply);
+            self.userApplyDao.create(userApply, function (err, items) {
+                if(err){
+                    callback(err);
+                    return;
+                }
+                callback(null);
+            })
+
         });
     },
     remove : function(target, callback){
@@ -104,5 +103,5 @@ ArticleService.prototype = {
 }
 
 
-module.exports =  ArticleService;
+module.exports =  AnswerService;
 

@@ -10,7 +10,8 @@ define([], function(){
             $.extend(opts, {
                 params:{
                     title: $('.article-title').val(),
-                    content: $('.article-text').val()
+                    content: $('.article-text').val(),
+                    type: $()
                 },
 
                 cgi: "/controller/articleAction/addArticle.do",

@@ -6,34 +6,8 @@
 
       
       <div class="content" id="doctor-bank-content">
-          <div id="search-panel" >
-              <div class="select_box">
-                  <span style="margin-right:40px;">性别</span> 
-                  <label for="">男</label>
-                  <input type="radio" value="0" name="sex">
-                   <label for="">女</label>
-                  <input type="radio" value="1" name="sex">
-              </div>
-              <div class="select_box">
-                  <span>我的年龄</span>
-                  <input name="age" type="text" placeholder="年龄">
-              </div>
-              <div class="select_box">
-                 <span>问题描述</span>
-                 <textarea name="description" class="disease-description"></textarea>
-              </div>
-            
 
-              <div>
-                  <a href="">
-                      <div class="ask-submit-btn">确认提问</div>
-                  </a>    
-                  
-              </div>
-             
-          </div>  
-  
-            <div class="ask-title">
+          <div class="ask-title">
             <span class="iconfont">&#xf00c8;</span><span>用户咨询</span>
           </div>
           <div class="doctor-ask-question-panel">
@@ -73,7 +47,7 @@
 <%=include('./common/scriptLink.html')(it, opt)%>
 <script type="text/javascript">
     require.config({
-        baseUrl : 'js/askQuestion/'
+        baseUrl : 'js/question-answer/'
     });
     require(['main'], function (articleWrite) {
         articleWrite.init();

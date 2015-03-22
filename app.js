@@ -81,8 +81,8 @@ app.use(orm.express(msqlUrl, {
 //        console.log(models.userDao);
         models.articleDao = require('./dao/ArticleDao')(db);
         models.doctorDao = require('./dao/DoctorDao')(db);
-//        models.userApplyDao = require('./dao/UserApplyDao')(db);
-//        models.statisticsDao = require('./dao/StatisticsDao')(db);
+        models.questionDao = require('./dao/QuestionDao')(db);
+        models.answerDao = require('./dao/AnswerDao')(db);
         models.db = db;
 
         global.models = models;

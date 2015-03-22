@@ -1,0 +1,35 @@
+<% for(var i = 0 ; i< it.items.length; i++){
+
+var typeText = {
+'0' : '药品理疗',
+'1' : '疾病困障',
+'2' : '健康养生',
+'3' : '医疗知识',
+'10' : '综合',
+
+};
+var article = it.items[i],
+typeName = typeText[it.items[i].type],
+hasNext = i+1 < it.items.length;
+
+%>
+<div class="article" data-articleId="<%= article.article_id%>" data-index="<%= i%>">
+
+    <div class="article-img">
+        <img src="img/article-<%= article.type%>.jpg" alt="">
+    </div>
+    <div class="article-content">
+        <div class="article-title"><%= article.title%></div>
+        <div class="article-description">
+            <%= article.content%>
+        </div>
+    </div>
+    <div class="article-info">
+        <span class="iconfont">&#x3436;</span>
+        <span class="article-type"><%= typeName%></span>
+        <span class="iconfont">&#xe607;</span>
+        <span class="article-readNum">300</span>
+    </div>
+
+</div>
+<% }%>

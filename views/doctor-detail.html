@@ -1,29 +1,10 @@
-<!doctype html>
+<%=include('./common/commonLinks.html')(it, opt)%>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-title"><%= it.pageTitle%></div>
+    <span id="return-btn" class="navbar-top-btn navbar-btn-absolute-left">返回</span>
+</div>
 
-<html>
-
-    <head>
-        <meta charset="utf-8">
-        <!-- 加入响应式布局 -->
-        <meta name="format-detection" content="telephone=no,email=no"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
-
-        <!-- 设置safari的属性 -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="Remote Camera" />
-
-        <title>掌上医疗</title>
-
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-title">黄小菊</div>
-            <span id="return-btn" class="navbar-top-btn navbar-btn-absolute-left">返回</span>       
-        </div>
-      <div class="content">
+<div class="content">
           <div class="doctor-detail">
               <div class="doctor-detail-info">
                   <div class="doctor-detail-picture">
@@ -120,12 +101,16 @@
 
 
             
-        </div>          
-    
-    <script src="./script/jquery.min.js"></script>
-    <script src="./script/doctor-detail.js"></script>
-    </body>
-    
+        </div>
 
-
-</html>    
+<%=include('./common/scriptLink.html')(it, opt)%>
+<script type="text/javascript">
+    require.config({
+        baseUrl : 'js/doctor-detail/'
+    });
+    require(['main'], function (articleWrite) {
+        articleWrite.init();
+    });
+</script>
+</body>
+</html>

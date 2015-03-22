@@ -7,9 +7,10 @@
 var DoctorAction = require('./action/DoctorAction'),
     ArticleAction = require('./action/ArticleAction'),
     UserAction = require("./action/UserAction"),
+    QuestionAction = require("./action/QuestionAction"),
+    AnswerAction = require("./action/AnswerAction"),
     IndexAction = require("./action/IndexAction"),
     StatisticsAction = require("./action/StatisticsAction"),
-    ApproveAction = require("./action/ApproveAction"),
     UserApplyAction = require("./action/UserApplyAction");
 
 var log4js = require('log4js'),
@@ -37,6 +38,7 @@ module.exports = function(app){
         var params = req.body,
         //获取用户model
         userDao = global.models.userDao;
+        console.log(params);
         if(GLOBAL.DEBUG){
             var user = {
                 account: 'coverguo',
@@ -55,26 +57,32 @@ module.exports = function(app){
                 return;
             });
         }else{
-            userDao.one({account : params.account, password:params.password} ,function (err , user) {
+            userDao.one({account : params.account} ,function (err , user) {
                 if(isError(res,err)){
                     return;
                 }
-//                console.log(user.name);
+              console.log(user);
                 if(!user){
-                    res.send(403, 'Sorry! you can not see that.');
+                    res.json({ret : 2 , msg : "没有该用户"});
                     return;
                 }else{
-
-                    req.session.user = user;
-                    logger.info("Old User:"+ req.session.user.name);
-
-                    if(user.type ==0){
-                        res.redirect("/index.html");
+                    if(user.password !== params.password){
+                        res.json({ret : 3 , msg : "密码错误，请重试"});
                         return;
                     }else{
-                        res.redirect("/doctor-index.html");
-                        return;
+                        req.session.user = user;
+                        logger.info("Old User:"+ req.session.user.name);
+
+                        if(user.type ==0){
+                            console.log(user.type);
+                            res.json({ret : 10 ,type:0, msg : user.account+"登录成功"});
+                            return;
+                        }else{
+                            res.json({ret : 11 ,type:1, msg : user.name+"医生，欢迎登录"});
+                            return;
+                        }
                     }
+
 
                 }
 
@@ -85,11 +93,35 @@ module.exports = function(app){
 
 
     });
+    //注册请求路径
+    app.post("/register.do", function(req, res){
+        var params = req.body,
+        //获取用户model
+            userDao = global.models.userDao;
+        console.log(params);
+        params.createTime = new Date();
+
+            userDao.create(params, function (err, user) {
+                if(err && err.errno == 1062){
+                    res.json({ret : err.code , msg : "该用户已存在"});
+                    return;
+                }
+                console.log(err);
+
+                res.json({ret : 0 , msg : "注册成功，将会在稍后跳往登录页面"});
+                return;
+            });
+
+    });
+    app.get('/register.html', function (req , res){
+        res.render('register', {index: 'index', pageTitle: '账号注册'});
+        return;
+    });
     app.get('/login.html', function (req , res){
         res.render('login', {});
         return;
     });
-
+    //判断是否登录了
     app.use(function (req , res , next){
         var params = req.query,
             user  = req.session.user,
@@ -108,16 +140,15 @@ module.exports = function(app){
             res.redirect("/login.html");
             return;
         }
-
-
     });
 
+
     app.get('/', function (req , res){
-        res.render('index', {index: 'index'});
+        res.render('index', {index: 'index', pageTitle: '掌上医疗'});
         return;
     });
     app.get('/index.html', function (req , res){
-        res.render('index', {index: 'index'});
+        res.render('index', {index: 'index', pageTitle: '掌上医疗'});
         return;
     });
 
@@ -129,14 +160,14 @@ module.exports = function(app){
         res.render('accountCenter', {index:'accountCenter'});
         return;
     });
-    app.get('/article-sort.html', function (req , res){
-        res.render('article-sort', {index:'article-sort'});
-        return;
-    });
+    app.get('/article-sort.html', ArticleAction.index);
+    app.get('/askQuestion.html', QuestionAction.ask);
+    app.get('/article-detail.html', ArticleAction.detail);
     app.get('/search.html', function (req , res){
         res.render('search', {index:'search'});
         return;
     });
+    app.get('/doctor-answerQuestion.html', AnswerAction.answer);
 
     //html页面请求
     app.get('/doctor-bank.html', DoctorAction.index);
@@ -162,7 +193,7 @@ module.exports = function(app){
             next();
         }
 
-    })
+    });
 
 
     // 请求路径为： controller/xxxAction/xxx.do (get || post)
@@ -186,8 +217,8 @@ module.exports = function(app){
                     case "user": UserAction[operation](params,req, res);break;
                     case "article": ArticleAction[operation](params,req,  res);break;
                     case "doctor": DoctorAction[operation](params,req, res);break;
-//                    case "log" : LogAction[operation](params,req, res); break;
-//                    case "userApply": UserApplyAction[operation](params,req, res);break;
+                    case "question" : QuestionAction[operation](params,req, res); break;
+                    case "answer": AnswerAction[operation](params,req, res);break;
 //                    case "statistics" : StatisticsAction[operation](params, req, res); break;
 
                     default  : next();

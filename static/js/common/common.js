@@ -1,6 +1,11 @@
-$("#return-btn").bind("click",function(){
-    window.history.go(-1);
 
+$("#return-btn").on("click",function(){
+    window.history.go(-1);
+});
+
+$("#search-button").on("click",function(){
+
+    $(".index-search-panel").slideToggle(300);
 });
 
 var encodeHtml = function (str) {

@@ -1,5 +1,5 @@
 /**
- * @info : APPLY ACION
+ * @info : Answer ACION
  * @author : coverguo
  * @date : 2015-01-07
  */
@@ -8,7 +8,8 @@
 var log4js = require('log4js'),
     logger = log4js.getLogger(),
     _ = require('underscore'),
-    ApplyService = require('../../service/ApplyService'),
+    AnswerService = require('../../service/AnswerService'),
+    QuestionService = require('../../service/QuestionService'),
     isError = function (res , error){
         if(error){
             res.json({ret : 1 , msg : error});
@@ -33,9 +34,18 @@ var processData = function (data){
 }
 
 
-var applyAction = {
+var AnswerAction = {
+    answer: function(req, res){
+        var params = req.query,
+            user  = req.session.user;
 
-    addApply: function(params, req , res){
+        var questionService =  new QuestionService();
+
+        questionService.queryListBySearch({} , function (err, item){
+            res.render('doctor-answerQuestion', { layout: false,  pageTitle: '疾病咨询' ,items : item});
+        });
+    },
+    addAnswer: function(params, req , res){
         //必要信息为空，则报错
         if(params.name == "" || params.url ==""){
             res.json({ret:1002, msg:"params error"});
@@ -119,5 +129,5 @@ var applyAction = {
 
 };
 
-module.exports = applyAction;
+module.exports = AnswerAction;
 
