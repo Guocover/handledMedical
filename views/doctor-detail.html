@@ -12,7 +12,7 @@
                   </div>
                   <div class="doctor-detail-personal-info">
                        <div>
-                            <span class="doctor-detail-name">陈国良</span>
+                            <span class="doctor-detail-name"><%= it.item.name%></span>
 
                             <span class="doctor-detail-more">
                               <a href="">
@@ -21,20 +21,20 @@
                             </span>
                        </div>
                       <span class="doctor-detail-rank">
-                             二级甲等医院主治医生
+                             <%= it.item.job%>
                       </span>
                       <div class="doctor-detail-btn">
-                          <div class="doctor-info-btn doctor-fans-btn">粉丝418</div>
+                          <div class="doctor-info-btn doctor-fans-btn">关注</div>
                           <div class="doctor-info-btn doctor-add-btn">发起聊天</div>
                       </div>
                   </div>
               </div>
               <div class="doctor-detail-message">
-                       全心全意为人民服务
+                       <%= it.item.description%>
                       
               </div>
               <div class="doctor-detail-scope">
-                        精神心理疾病、焦虑症、抑郁症、物质依赖、强迫症、精神分裂症。认知功能评定：智力、记忆力评定等。
+                       <%= it.item.scope%>
                          <span class="iconfont big-more">&#xe698;</span>
               </div>
               <div class="doctor-detail-evaluate">

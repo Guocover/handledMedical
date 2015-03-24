@@ -161,16 +161,18 @@ module.exports = function(app){
         return;
     });
     app.get('/article-sort.html', ArticleAction.index);
-    app.get('/askQuestion.html', QuestionAction.ask);
     app.get('/article-detail.html', ArticleAction.detail);
+    //doctor页面请求
+    app.get('/doctor-bank.html', DoctorAction.index);
+    app.get('/doctor-detail.html', DoctorAction.detail);
+
+    app.get('/askQuestion.html', QuestionAction.ask);
     app.get('/search.html', function (req , res){
         res.render('search', {index:'search'});
         return;
     });
-    app.get('/doctor-answerQuestion.html', AnswerAction.answer);
 
-    //html页面请求
-    app.get('/doctor-bank.html', DoctorAction.index);
+    app.get('/doctor-answerQuestion.html', AnswerAction.answer);
 //
 ////    app.get('/login.html', function (req , res){
 ////        user = req.session.user = {loginName: "coverguo", chineseName: '郭锋棉' ,role : 1, id:1};

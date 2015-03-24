@@ -97,8 +97,6 @@ define([ 'template/doctor.tpl'], function(doctorTpl){
         });
 
 
-
-
     }
     var isInIted = false;
     function getData(){

@@ -24,6 +24,19 @@ var doctorAction = {
         res.render('doctor-bank', {});
         return;
     },
+    detail:function(req, res){
+        if(!req.query.doctor_id){
+            res.redirect("/404.html");
+            return;
+        }
+        var params ={
+            doctor_id: +req.query.doctor_id
+        };
+        var doctorService =  new DoctorService();
+        doctorService.queryListBySearch(params , function (err, item){
+            res.render('doctor-detail', { layout: false ,pageTitle:item[0].name,item : item[0]});
+        });
+    },
     addDoctor: function(params, req , res){
 
     },

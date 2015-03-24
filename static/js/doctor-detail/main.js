@@ -14,6 +14,10 @@ define([], function(){
             $(this).find(".evaluate-item-num").text(num);
         });
 
+        $(".doctor-fans-btn").on("click", function(){
+
+        })
+
     }
 
     function init(){
